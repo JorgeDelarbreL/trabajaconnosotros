@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  CLON · Tulum Country Club — "Trabaja con Nosotros"
+  Recreación estática y autónoma de:
+  https://www.tulumcountryclub.com/es/trabaja-con-nosotros
+  ----------------------------------------------------------------
+  NOTAS DE INTEGRACIÓN (para copiar/pegar y adaptar):
+   1. LOGO      -> assets/logos/tulum-country-club.png (extraído del
+                   manual). El sitio real usa logo-tulum.svg; sustituir
+                   por el SVG oficial cuando esté disponible.
+   2. IMÁGENES  -> hero / "trabaja" / "equipo": marcadas con .ph
+                   (placeholder). Cambiar el fondo por la imagen real
+                   (rutas reales anotadas en cada bloque).
+   3. FUENTES   -> Arsenal + Montserrat (Google Fonts), las mismas del
+                   sitio real.
+   4. FORM      -> action="" (sin backend). Apuntar al endpoint real.
+   5. COLORES   -> variables :root (--tcc-*), muestreadas de la marca.
+  ================================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabaja con nosotros | Tulum Country Club</title>
+  <meta name="description" content="Trabaja con nosotros, Tulum Country Club, la mejor oferta de propiedades en venta y alquiler en el caribe mexicano.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --tcc-espresso: #302018;   /* texto principal / marca */
+      --tcc-brown:    #473729;   /* marrón corporativo (manual) */
+      --tcc-ink:      #35261a;   /* iconografía */
+      --tcc-gold:     #b0a060;   /* sol / dorado de marca */
+      --tcc-gold-dk:  #94854b;
+      --tcc-cream:    #f7f4ee;   /* fondo claro */
+      --tcc-sand:     #ece5d8;
+      --tcc-line:     #e0d8c9;
+      --tcc-muted:    #7a6f61;
+      --tcc-white:    #ffffff;
+      --font-display: 'Arsenal', 'Helvetica Neue', Arial, sans-serif;
+      --font-body:    'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      --header-h: 92px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--tcc-espresso);
+      background: var(--tcc-white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { width: min(1180px, 92%); margin-inline: auto; }
+
+    /* placeholder de imagen (sustituir por foto real) */
+    .ph {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(48,32,24,.06), rgba(176,160,96,.14)),
+        repeating-linear-gradient(45deg, #efe9df 0 22px, #e9e2d5 22px 44px);
+    }
+    .ph::after {
+      content: attr(data-ph);
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--tcc-muted);
+    }
+
+    /* ---------------- HEADER ---------------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(247,244,238,.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--tcc-line);
+    }
+    .header-inner {
+      height: var(--header-h);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .brand img { height: 46px; width: auto; }
+    .nav-links {
+      display: flex; align-items: center; gap: 26px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500; letter-spacing: .02em;
+      color: var(--tcc-espresso);
+      padding: 6px 0; position: relative;
+      transition: color .2s ease;
+    }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 0; bottom: 0;
+      width: 0; height: 2px; background: var(--tcc-gold);
+      transition: width .25s ease;
+    }
+    .nav-links a:hover { color: var(--tcc-gold-dk); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .burger {
+      display: none; background: none; border: 0; cursor: pointer;
+      flex-direction: column; gap: 5px; padding: 8px;
+    }
+    .burger span { width: 26px; height: 2px; background: var(--tcc-espresso); }
+
+    /* ---------------- HERO ---------------- */
+    .hero {
+      /* IMAGEN REAL: /.resources/lm-residences/webresources/RES_CarouselCabecera/... */
+      position: relative;
+      min-height: 420px;
+      display: flex; align-items: center;
+      color: var(--tcc-white);
+      background:
+        linear-gradient(90deg, rgba(48,32,24,.78) 0%, rgba(71,55,41,.55) 60%, rgba(71,55,41,.25) 100%),
+        linear-gradient(120deg, #4a3a2b, #2c1d14);
+    }
+    .hero .wrap { padding: 74px 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
+      color: var(--tcc-gold); font-weight: 600; margin-bottom: 20px;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--tcc-gold); }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: clamp(30px, 4.6vw, 50px);
+      line-height: 1.12; max-width: 720px; text-wrap: balance;
+    }
+    .hero h1 span { display: block; font-weight: 400; color: rgba(255,255,255,.85);
+      font-size: .62em; margin-top: 12px; }
+
+    /* ---------------- BOTONES ---------------- */
+    .btn {
+      display: inline-block; cursor: pointer;
+      font-family: var(--font-body); font-weight: 600;
+      font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+      padding: 15px 34px; border-radius: 2px; border: 1.5px solid transparent;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .btn-gold { background: var(--tcc-gold); color: var(--tcc-white); }
+    .btn-gold:hover { background: var(--tcc-gold-dk); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--tcc-espresso); border-color: var(--tcc-espresso); }
+    .btn-outline:hover { background: var(--tcc-espresso); color: var(--tcc-white); }
+    .btn-ghost { background: transparent; color: var(--tcc-gold); border-color: var(--tcc-gold); }
+    .btn-ghost:hover { background: var(--tcc-gold); color: var(--tcc-white); }
+
+    /* ---------------- SECCIÓN: TRABAJA ---------------- */
+    section { padding: 82px 0; }
+    .section-title {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(26px, 3.4vw, 38px); line-height: 1.15;
+    }
+    .section-title .accent { color: var(--tcc-gold-dk); font-weight: 400; }
+
+    .work {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px; align-items: center;
+    }
+    .work p { color: var(--tcc-muted); font-size: 16.5px; margin: 22px 0 30px; max-width: 44ch; }
+    .work .ph { aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; }
+
+    /* ---------------- SECCIÓN: VALORES ---------------- */
+    .values { background: var(--tcc-cream); text-align: center; }
+    .values .lead {
+      max-width: 760px; margin: 20px auto 54px;
+      color: var(--tcc-muted); font-size: 17px;
+    }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px;
+    }
+    .value-card {
+      background: var(--tcc-white); border: 1px solid var(--tcc-line);
+      border-radius: 6px; padding: 38px 26px; text-align: left;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .value-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(48,32,24,.10); }
+    .value-icon {
+      width: 54px; height: 54px; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; background: var(--tcc-espresso); color: var(--tcc-gold);
+    }
+    .value-icon svg { width: 26px; height: 26px; }
+    .value-card h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+    .value-card p { font-size: 14.5px; color: var(--tcc-muted); }
+
+    /* ---------------- SECCIÓN: EQUIPO ---------------- */
+    .team { text-align: center; }
+    .team .lead { color: var(--tcc-muted); font-size: 17px; margin: 18px auto 40px; max-width: 640px; }
+    .team .ph { aspect-ratio: 21/9; border-radius: 6px; overflow: hidden; }
+
+    /* ---------------- SECCIÓN: CV FORM ---------------- */
+    .cv { background: var(--tcc-espresso); color: var(--tcc-white); }
+    .cv .section-title .accent { color: var(--tcc-gold); }
+    .cv .intro { color: rgba(255,255,255,.72); margin: 18px 0 40px; max-width: 60ch; }
+    .cv-form {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 22px 28px;
+    }
+    .cv-form .full { grid-column: 1 / -1; }
+    .field label { display: block; font-size: 12.5px; letter-spacing: .04em; font-weight: 500;
+      margin-bottom: 8px; color: rgba(255,255,255,.85); }
+    .field input[type=text], .field input[type=email], .field textarea {
+      width: 100%; padding: 13px 15px; border-radius: 3px;
+      border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.06);
+      color: var(--tcc-white); font-family: var(--font-body); font-size: 15px;
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,.4); }
+    .field input:focus, .field textarea:focus {
+      outline: none; border-color: var(--tcc-gold); background: rgba(255,255,255,.10);
+    }
+    .field textarea { min-height: 120px; resize: vertical; }
+
+    .country-pref { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 4px; }
+    .check { display: flex; align-items: flex-start; gap: 11px; font-size: 14px;
+      color: rgba(255,255,255,.85); cursor: pointer; }
+    .check input { margin-top: 3px; accent-color: var(--tcc-gold); width: 16px; height: 16px; flex-shrink: 0; }
+    .pref-title { font-size: 12.5px; letter-spacing: .04em; margin-bottom: 12px; color: rgba(255,255,255,.85); }
+
+    .file-drop {
+      border: 1.5px dashed rgba(255,255,255,.32); border-radius: 4px;
+      padding: 26px; text-align: center; cursor: pointer;
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .file-drop:hover { border-color: var(--tcc-gold); background: rgba(255,255,255,.05); }
+    .file-drop .fname { font-size: 14px; color: rgba(255,255,255,.9); }
+    .file-drop .hint { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 8px; }
+    .file-drop svg { width: 34px; height: 34px; color: var(--tcc-gold); margin: 0 auto 10px; }
+
+    .cv-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 8px; }
+
+    /* ---------------- SECCIÓN: VIDEO ---------------- */
+    .video-band { background: var(--tcc-brown); color: var(--tcc-white); }
+    .video-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+    .video-frame {
+      position: relative; aspect-ratio: 16/9; border-radius: 6px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .play {
+      width: 74px; height: 74px; border-radius: 50%; border: 0; cursor: pointer;
+      background: var(--tcc-gold); color: var(--tcc-white);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .play:hover { transform: scale(1.08); background: var(--tcc-gold-dk); }
+    .play svg { width: 26px; height: 26px; margin-left: 3px; }
+    .video-grid h2 { font-family: var(--font-display); font-size: clamp(24px,3vw,34px); font-weight: 700; margin-bottom: 16px; }
+    .video-grid p { color: rgba(255,255,255,.8); font-size: 16.5px; }
+
+    /* ---------------- FOOTER ---------------- */
+    .site-footer { background: var(--tcc-ink); color: rgba(255,255,255,.8); font-size: 14px; }
+    .footer-top { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; padding: 60px 0 40px; }
+    .footer-col .f-title { display: block; font-family: var(--font-display); color: var(--tcc-gold);
+      font-size: 18px; margin-bottom: 14px; }
+    .footer-col .f-sub { display: block; font-weight: 600; color: #fff; margin: 14px 0 4px; }
+    .footer-col p { margin-bottom: 6px; color: rgba(255,255,255,.68); }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .footer-links a { color: #fff; font-weight: 500; }
+    .footer-links a:hover { color: var(--tcc-gold); }
+    .socials { display: flex; gap: 14px; }
+    .socials a {
+      width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25);
+      display: flex; align-items: center; justify-content: center; transition: background .2s ease, border-color .2s ease;
+    }
+    .socials a:hover { background: var(--tcc-gold); border-color: var(--tcc-gold); }
+    .socials svg { width: 18px; height: 18px; }
+
+    .newsletter { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .newsletter input {
+      flex: 1 1 220px; padding: 13px 15px; border-radius: 3px; border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.06); color: #fff; font-family: var(--font-body);
+    }
+    .newsletter input::placeholder { color: rgba(255,255,255,.45); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12); padding: 20px 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .langs a { padding: 4px 8px; font-weight: 600; }
+    .langs a[aria-current] { color: var(--tcc-gold); }
+    .legal { display: flex; gap: 22px; flex-wrap: wrap; }
+    .legal a { color: rgba(255,255,255,.68); }
+    .legal a:hover { color: #fff; }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width: 960px) {
+      .nav-links {
+        position: fixed; inset: var(--header-h) 0 auto 0;
+        flex-direction: column; align-items: flex-start; gap: 0;
+        background: var(--tcc-cream); border-bottom: 1px solid var(--tcc-line);
+        padding: 8px 6%; transform: translateY(-120%); transition: transform .3s ease;
+      }
+      .nav-links.open { transform: translateY(0); }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 14px 0; border-bottom: 1px solid var(--tcc-line); }
+      .burger { display: flex; }
+      .work, .video-grid { grid-template-columns: 1fr; gap: 34px; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .cv-form { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 520px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/es/" aria-label="Tulum Country Club — Inicio">
+        <img src="assets/logos/tulum-country-club.png" alt="Tulum Country Club">
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/es/lotes">Lotes</a></li>
+          <li><a href="/es/propiedades">Propiedades</a></li>
+          <li><a href="/es/financiamiento">Financiamiento</a></li>
+          <li><a href="/es/nuestros-servicios">Nuestros servicios</a></li>
+          <li><a href="/es/amenidades">Amenidades</a></li>
+          <li><a href="https://pgarivieramaya.com/es/inicio/">Campo de golf</a></li>
+          <li><a href="https://blog.tulumcountryclub.com/es/">Blog</a></li>
+        </ul>
+      </nav>
+      <button class="burger" id="burger" aria-label="Mostrar menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero ph" data-ph="Imagen de cabecera — work-with-us">
+    <div class="wrap">
+      <span class="eyebrow">Trabaja con nosotros</span>
+      <h1>Propiedades de lujo en el Caribe
+        <span>Encuentre su hogar en México o República Dominicana</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ===================== TRABAJA CON NOSOTROS ===================== -->
+  <section>
+    <div class="wrap work">
+      <div>
+        <h2 class="section-title"><span class="accent">Trabaja</span> con Nosotros</h2>
+        <p>Tulum Country Club es un complejo único en el Caribe; nuestro equipo está formado por profesionales de alto nivel. Si desea formar parte, envíe su CV.</p>
+        <a class="btn btn-gold" href="#sendCVForm">Envíe su currículum</a>
+      </div>
+      <!-- IMAGEN REAL: /.resources/lm-residences/webresources/RES_TextButtonImage_DA/assets/images/work-with-us.jpeg -->
+      <div class="ph" data-ph="work-with-us.jpeg"></div>
+    </div>
+  </section>
+
+  <!-- ===================== NUESTROS VALORES ===================== -->
+  <section class="values">
+    <div class="wrap">
+      <h2 class="section-title">Nuestros <span class="accent">valores</span></h2>
+      <p class="lead">Lo que más nos importa es que la vida en nuestros resorts sea extraordinaria y que cada persona pueda desarrollar un estilo de vida único y relevante del que disfrutar, algo que hacemos real gracias a nuestro servicio de calidad.</p>
+      <div class="values-grid">
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-2 5 5 0 0 1 9 2c-2 4.5-9 9-9 9z"/></svg>
+          </div>
+          <h3>Compartimos proyecto</h3>
+          <p>Aseguramos el óptimo crecimiento del proyecto residencial eligiendo zonas donde antes ya hemos invertido.</p>
+        </article>
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
+          </div>
+          <h3>Desarrollamos comunidades</h3>
+          <p>Hacemos posible una forma de vida relevante para las personas, con absoluto respeto y devoción por los entornos.</p>
+        </article>
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c3 4 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 3-6 6-10z"/></svg>
+          </div>
+          <h3>Cuidamos la belleza para vivirla</h3>
+          <p>Nuestros residenciales se encuentran en zonas de abundante naturaleza y rodeados de campos de golf.</p>
+        </article>
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+          </div>
+          <h3>Más disfrute, más valor</h3>
+          <p>A través de la mejora constante creamos vivencias emocionantes para nuestros clientes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NUESTRO EQUIPO ===================== -->
+  <section class="team">
+    <div class="wrap">
+      <h2 class="section-title">Nuestro <span class="accent">equipo</span></h2>
+      <p class="lead">Conozca a parte de nuestro equipo de profesionales de México y República Dominicana.</p>
+      <!-- IMAGEN REAL: /.resources/lm-residences/webresources/RES_TitleImage_DA/assets/images/work-with-us-our-team.jpeg -->
+      <div class="ph" data-ph="work-with-us-our-team.jpeg"></div>
+    </div>
+  </section>
+
+  <!-- ===================== ENVÍE SU CV ===================== -->
+  <section class="cv" id="sendCVForm">
+    <div class="wrap">
+      <h2 class="section-title">Envíe <span class="accent">su CV</span></h2>
+      <p class="intro">Si cree que su perfil encaja con nuestra filosofía de vida y de trabajo, estaremos encantados de conocerle. Complete el formulario y adjunte su currículum.</p>
+
+      <form class="cv-form" action="" method="post" enctype="multipart/form-data" novalidate>
+        <div class="field full">
+          <div class="pref-title">Preferencia de país</div>
+          <div class="country-pref">
+            <label class="check"><input type="checkbox" name="mexico" checked> México</label>
+            <label class="check"><input type="checkbox" name="republica-dominicana"> República Dominicana</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="firstName">Nombre *</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Su nombre aquí" required>
+        </div>
+        <div class="field">
+          <label for="lastName">Apellidos *</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Sus apellidos aquí" required>
+        </div>
+        <div class="field full">
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" placeholder="nombre@email.com" required>
+        </div>
+        <div class="field full">
+          <label for="message">Mensaje (opcional)</label>
+          <textarea id="message" name="message" placeholder="Escriba aquí el mensaje"></textarea>
+        </div>
+
+        <div class="field full">
+          <label for="cvFile">Adjunte su CV *</label>
+          <label class="file-drop" for="cvFile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 20h16"/></svg>
+            <div class="fname" id="cvFileName">Seleccione un archivo</div>
+            <div class="hint">Formato permitido: PDF · Tamaño máximo: 5 MB</div>
+          </label>
+          <input type="file" id="cvFile" name="file" accept="application/pdf" hidden required>
+        </div>
+
+        <div class="field full">
+          <label class="check"><input type="checkbox" name="acceptGdpr" required> He leído y acepto la <a href="/es/politica-de-privacidad" style="color:var(--tcc-gold);text-decoration:underline;margin-left:4px;">Política de privacidad</a> *</label>
+          <label class="check" style="margin-top:12px;"><input type="checkbox" name="acceptProfiling"> Consiento el tratamiento de mis datos para la elaboración de perfiles para la personalización de ofertas y servicios.</label>
+        </div>
+
+        <div class="cv-actions full">
+          <button type="submit" class="btn btn-gold">Enviar CV</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== VIDEO ===================== -->
+  <section class="video-band">
+    <div class="wrap video-grid">
+      <!-- VÍDEO REAL: /.resources/lm-residences/webresources/RES_VideoTitle/assets/videos/desk-side.mp4 -->
+      <div class="video-frame ph" data-ph="desk-side.mp4">
+        <button class="play" aria-label="Reproducir vídeo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <div>
+        <h2>Trabaje en un lugar fascinante</h2>
+        <p>Si crees que tu perfil encaja con nuestra filosofía de vida y de trabajo, estaremos encantados de contar contigo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-col">
+          <span class="f-title">Contacto</span>
+          <span class="f-sub">Tulum Country Club</span>
+          <p>Carretera Federal Chetumal–Benito Juárez, km 250, Akumal. Municipio de Tulum, Quintana Roo, México. CP 77776</p>
+          <span class="f-sub">Atención telefónica</span>
+          <p><a href="tel:+529848755085">+52 984 87 55085</a></p>
+          <p>Lunes a Domingo, 8:00 a 20:00 (GMT-5)</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-links">
+            <a href="/es/trabaja-con-nosotros">Trabaja con nosotros</a>
+            <a href="/es/faq-financiacion">FAQ's</a>
+            <a href="https://www.playanuevaromana.com/es/">Residencial en República Dominicana</a>
+            <a href="/es/quienes-somos">Quiénes somos</a>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/TulumCountryClub/" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h2.7l.4-3H13V9c0-.9.3-1.5 1.6-1.5H16V4.9C15.7 4.9 14.7 4.8 13.6 4.8c-2.3 0-3.9 1.4-3.9 4V11H7v3h2.7v8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/tulumcountryclub/" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.youtube.com/c/TulumCountryClub" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12zM10 15.5v-7l6 3.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-top" style="padding-top:0;border-top:1px solid rgba(255,255,255,.12);">
+        <div class="footer-col">
+          <span class="f-title">Reciba nuestras ofertas y novedades</span>
+          <p>Suscríbase a la newsletter de Piñero para recibir comunicaciones comerciales. Puede darse de baja en cualquier momento.</p>
+        </div>
+        <div class="footer-col">
+          <form class="newsletter" action="" method="post">
+            <input type="email" name="email" placeholder="Escriba aquí su correo electrónico" required>
+            <button type="submit" class="btn btn-ghost">Apuntarme</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="langs">
+          <a href="/es/trabaja-con-nosotros" aria-current="true">ES</a>
+          <a href="/en/work-with-us">EN</a>
+        </div>
+        <div class="legal">
+          <a href="/es/aviso-legal">Aviso Legal</a>
+          <a href="/es/politica-de-privacidad">Política de privacidad</a>
+          <a href="/es/politica-de-cookies">Política de cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('navLinks');
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      burger.setAttribute('aria-label', open ? 'Ocultar menú' : 'Mostrar menú');
+    });
+
+    // Nombre del archivo de CV
+    var cvInput = document.getElementById('cvFile');
+    cvInput.addEventListener('change', function () {
+      document.getElementById('cvFileName').textContent =
+        this.files.length ? this.files[0].name : 'Seleccione un archivo';
+    });
+  </script>
+</body>
+</html>
