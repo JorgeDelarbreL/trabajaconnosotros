@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trabaja con Nosotros — Real Estate &amp; Golf · Piñero</title>
-<meta name="description" content="Vacantes en la división Real Estate & Golf de Piñero: Tulum Country Club, PGA Riviera Maya, Playa Nueva Romana y PGA Ocean's 4.">
+<meta name="description" content="Vacantes y carrera en la división Real Estate & Golf de Piñero: Tulum Country Club, PGA Riviera Maya, Playa Nueva Romana y PGA Ocean's 4.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +33,7 @@ h1,h2,h3{font-family:'Arsenal',Georgia,serif;color:var(--ink);line-height:1.14;f
 .section-head h2{font-size:clamp(27px,3.6vw,40px)}
 .section-head .lead{margin-top:12px}
 .title-soft{color:var(--soft)} .title-soft b{color:var(--ink);font-weight:700}
+.ph-mini{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--soft);font-size:12px;text-align:center;padding:16px}
 
 .btn{display:inline-flex;align-items:center;gap:.5em;font-family:'Montserrat';font-size:14px;font-weight:600;
   letter-spacing:.02em;padding:12px 24px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
@@ -42,17 +43,19 @@ h1,h2,h3{font-family:'Arsenal',Georgia,serif;color:var(--ink);line-height:1.14;f
 .btn-ink:hover{background:#43403a}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold-dk)}
+.btn-light{background:#fff;color:var(--charcoal)}
+.btn-light:hover{background:var(--sand2)}
 .arrow{transition:transform .2s} .btn:hover .arrow,.link-more:hover .arrow{transform:translateX(4px)}
 .link-more{display:inline-flex;align-items:center;gap:.45em;font-weight:600;font-size:14px;color:var(--gold-dk)}
 
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:26px;height:64px}
+.nav{display:flex;align-items:center;gap:24px;height:64px}
 .brand{display:flex;flex-direction:column;line-height:1.05;margin-right:auto}
 .brand b{font-family:'Arsenal',serif;font-size:18px;color:var(--ink);letter-spacing:.01em}
 .brand span{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);font-weight:600}
-.nav-links{display:flex;gap:22px}
-.nav-links a{font-size:14px;font-weight:500;color:var(--ink);padding:6px 0;position:relative}
+.nav-links{display:flex;gap:20px}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--ink);padding:6px 0;position:relative}
 .nav-links a:hover{color:var(--gold-dk)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:.2s}
 .nav-links a:hover::after{width:100%}
@@ -64,9 +67,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .burger{display:none;border:0;background:transparent;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
 .burger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
 
-/* Hero — claro y directo a vacantes */
+/* Hero */
 .hero{background:var(--sand);border-bottom:1px solid var(--line)}
-.hero-inner{padding:clamp(52px,7vw,92px) 0 clamp(40px,5vw,60px);max-width:820px}
+.hero-inner{padding:clamp(52px,7vw,92px) 0 clamp(40px,5vw,60px);max-width:840px}
 .hero h1{font-size:clamp(34px,5.4vw,58px);letter-spacing:-.01em}
 .hero h1 em{font-style:italic;color:var(--gold-dk);font-weight:400}
 .hero p{font-size:clamp(16px,1.9vw,20px);color:var(--muted);margin-top:18px;max-width:56ch}
@@ -79,7 +82,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .pchip:hover{border-color:var(--gold);color:var(--gold-dk);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
 .pchip .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
 
-/* Vacantes — protagonista */
+/* Vacantes */
 .jobs{background:var(--paper)}
 .jobs-note{display:flex;gap:11px;align-items:flex-start;background:var(--sand);border:1px solid var(--line);
    border-radius:12px;padding:15px 18px;margin-bottom:24px;font-size:13px;color:var(--muted)}
@@ -103,7 +106,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .job-empty{text-align:center;color:var(--muted);padding:38px;background:var(--sand);border:1px dashed var(--line2);border-radius:var(--r)}
 .jobs-foot{margin-top:22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 
-/* Proyectos / dónde */
+/* Proyectos */
 .units{background:var(--sand)}
 .units-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .unit{background:#fff;border:1px solid var(--line);border-radius:var(--rlg);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
@@ -113,29 +116,53 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .unit-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .unit-badge{position:absolute;top:13px;left:13px;background:rgba(255,255,255,.94);border-radius:999px;padding:5px 13px;
    font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-dk)}
-.ph-mini{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--soft);font-size:12px;text-align:center;padding:16px}
 .unit-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:9px;flex:1}
 .unit h3{font-size:23px}
 .unit .loc{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted)}
 .unit .loc svg{flex:none;margin-top:2px}
 .unit p{font-size:14px;color:var(--muted)}
-.unit .unit-foot{margin-top:auto;padding-top:10px}
+.leader{display:flex;align-items:center;gap:11px;padding:12px 0 2px;border-top:1px solid var(--line);margin-top:4px}
+.leader .lphoto{width:38px;height:38px;border-radius:50%;background:var(--sand2);flex:none;display:flex;align-items:center;justify-content:center;
+   font-size:8px;color:var(--soft);text-align:center;overflow:hidden;position:relative}
+.leader .lphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.leader b{font-size:13.5px;color:var(--ink);display:block;line-height:1.25;font-family:'Montserrat'}
+.leader .role{font-size:12px;color:var(--muted)}
+.unit .unit-foot{margin-top:auto;padding-top:12px}
 
 /* Cómo es trabajar aquí */
 .working{background:var(--paper)}
-.promo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,5vw,58px);align-items:center;padding:clamp(24px,4vw,44px) 0}
-.promo:not(:last-of-type){border-bottom:1px solid var(--line)}
-.promo.rev .promo-media{order:2}
-.promo-media{aspect-ratio:5/4;border-radius:var(--rlg);overflow:hidden;position:relative;background:
-   repeating-linear-gradient(135deg,#efe9df,#efe9df 13px,#f4efe6 13px,#f4efe6 26px);box-shadow:var(--shadow-sm)}
-.promo-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.promo-media .ph-mini{color:var(--soft)}
-.promo h3{font-size:clamp(21px,2.6vw,28px);margin-bottom:12px}
-.promo p+p{margin-top:12px}
-.promo p{color:var(--muted)}
+.editorial{max-width:780px}
+.editorial .eyebrow{margin-bottom:12px;display:block}
+.editorial h3{font-size:clamp(23px,3.2vw,34px);margin-bottom:14px}
+.editorial p{color:var(--muted);font-size:16px}
+.big-media{aspect-ratio:16/9;border-radius:var(--rlg);overflow:hidden;position:relative;box-shadow:var(--shadow-sm);
+   margin:clamp(34px,5vw,56px) 0;background:repeating-linear-gradient(135deg,#efe9df,#efe9df 13px,#f4efe6 13px,#f4efe6 26px)}
+.big-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.big-media .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.big-media .play span{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(30px,4vw,46px)}
+.quote{background:var(--sand);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;display:flex;flex-direction:column}
+.quote .m{color:var(--gold);font-family:'Arsenal',serif;font-size:44px;line-height:.6;height:24px}
+.quote p{font-family:'Arsenal',serif;font-size:18px;line-height:1.45;color:var(--ink)}
+.quote .who{margin-top:16px;font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.growth{margin-top:clamp(40px,6vw,64px)}
+
+/* Liderazgo / EVP */
+.evp{background:var(--sand)}
+.evp-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,5vw,64px);align-items:center}
+.evp-photo{aspect-ratio:4/5;border-radius:var(--rlg);overflow:hidden;position:relative;box-shadow:var(--shadow);
+   background:repeating-linear-gradient(135deg,#e8e1d5,#e8e1d5 13px,#efe9df 13px,#efe9df 26px)}
+.evp-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.evp .mark{font-family:'Arsenal',serif;font-size:56px;color:var(--gold);line-height:.4;height:34px}
+.evp blockquote{font-family:'Arsenal',serif;font-size:clamp(22px,2.7vw,31px);line-height:1.32;color:var(--ink);font-style:italic;font-weight:400}
+.evp .sig{margin-top:24px;display:flex;align-items:center;gap:14px}
+.evp .sig .bar{width:34px;height:2px;background:var(--gold)}
+.evp .sig b{display:block;font-family:'Montserrat';font-size:15px;color:var(--ink)}
+.evp .sig span{font-size:13px;color:var(--muted)}
+.evp .draft{margin-top:18px;font-size:12px;color:var(--soft);font-style:italic}
 
 /* Itinerarios */
-.paths{background:var(--sand)}
+.paths{background:var(--paper)}
 .paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .path{border:1px solid var(--line);border-radius:var(--r);padding:26px 26px;background:#fff;transition:.2s}
 .path:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:transparent}
@@ -144,25 +171,28 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .path p{font-size:13.5px;color:var(--muted)}
 
 /* Valores */
-.values{background:var(--paper)}
-.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.value{padding:6px 4px}
-.value .k{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;background:var(--sand);
-   color:var(--gold-dk);font-family:'Arsenal',serif;font-size:18px;margin-bottom:15px}
+.values{background:var(--sand)}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.value .k{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;background:#fff;
+   color:var(--gold-dk);font-family:'Arsenal',serif;font-size:18px;margin-bottom:15px;box-shadow:var(--shadow-sm)}
 .value h3{font-size:20px}
 .value .tag{color:var(--gold-dk);font-weight:600;font-size:13px;margin:3px 0 10px}
 .value p{font-size:13.5px;color:var(--muted)}
 
-/* Quiénes somos — sobrio, al final */
-.about{background:var(--charcoal);color:#e9e3d8}
-.about h2{color:#fff}
+/* Quiénes somos */
+.about{background:var(--paper);border-top:1px solid var(--line)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center}
-.about p{color:#c7bfb2;font-size:15px}
+.about p{color:var(--muted);font-size:15px}
 .about p+p{margin-top:14px}
-.about .link-more{color:var(--gold)}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:22px 30px}
-.about-stats .n{font-family:'Arsenal',serif;font-size:clamp(28px,3.4vw,40px);color:#fff}
-.about-stats .l{font-size:13px;color:#a99f90;margin-top:2px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px 30px}
+.about-stats .n{font-family:'Arsenal',serif;font-size:clamp(28px,3.4vw,40px);color:var(--ink)}
+.about-stats .l{font-size:13px;color:var(--muted);margin-top:2px}
+
+/* CTA cierre */
+.cta{background:var(--charcoal);color:#fff;text-align:center}
+.cta h2{color:#fff;font-size:clamp(27px,4vw,42px);max-width:20ch;margin:12px auto 0}
+.cta .eyebrow{color:var(--gold)}
+.cta .btn{margin-top:28px}
 
 /* Footer */
 footer{background:#211f1b;color:#b7ad9e;font-size:14px}
@@ -179,19 +209,19 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
 @media(max-width:960px){
   .units-grid{grid-template-columns:1fr}
   .values-grid{grid-template-columns:1fr 1fr}
-  .paths-grid{grid-template-columns:1fr 1fr}
-  .promo,.promo.rev .promo-media,.about-grid{grid-template-columns:1fr}
-  .promo.rev .promo-media{order:0}
+  .paths-grid,.quotes{grid-template-columns:1fr 1fr}
+  .about-grid,.evp-grid{grid-template-columns:1fr}
+  .evp-photo{max-width:360px}
   .jobs-bar{grid-template-columns:1fr 1fr}
   .foot-top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:720px){
   .nav-links{position:fixed;inset:64px 0 auto 0;background:#fff;flex-direction:column;gap:0;padding:8px 6%;
-     border-bottom:1px solid var(--line);box-shadow:var(--shadow);transform:translateY(-140%);transition:.25s;z-index:40}
+     border-bottom:1px solid var(--line);box-shadow:var(--shadow);transform:translateY(-150%);transition:.25s;z-index:40}
   .nav-links.open{transform:translateY(0)}
   .nav-links a{padding:14px 0;border-bottom:1px solid var(--line)}
   .burger{display:flex}
-  .paths-grid,.values-grid,.jobs-bar,.foot-top{grid-template-columns:1fr}
+  .paths-grid,.values-grid,.quotes,.jobs-bar,.foot-top{grid-template-columns:1fr}
   .job{grid-template-columns:1fr}
   .nav .btn-hero-nav{display:none}
 }
@@ -210,6 +240,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
       <a href="#vacantes">Vacantes</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#trabajar">Cómo es trabajar aquí</a>
+      <a href="#liderazgo">Liderazgo</a>
       <a href="#itinerarios">Itinerarios</a>
     </nav>
     <div class="nav-right">
@@ -229,8 +260,8 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
 <section class="hero">
   <div class="wrap hero-inner">
     <span class="eyebrow">Trabaja con nosotros · Real Estate &amp; Golf</span>
-    <h1 style="margin-top:14px">Encuentra tu próxima <em>vacante</em> en nuestras comunidades y campos de golf.</h1>
-    <p>Tulum Country Club, PGA Riviera Maya, Playa Nueva Romana y PGA Ocean's 4. Un mismo equipo en México y República Dominicana. Empieza por lo que buscas: las posiciones abiertas.</p>
+    <h1 style="margin-top:14px">Encuentra tu lugar en una <em>comunidad única</em>.</h1>
+    <p>Tulum Country Club, PGA Riviera Maya, Playa Nueva Romana y PGA Ocean's 4. Un mismo equipo en México y República Dominicana. Empieza por lo que buscas: las vacantes abiertas.</p>
     <div class="hero-cta">
       <a href="#vacantes" class="btn btn-gold">Ver vacantes <span class="arrow">→</span></a>
       <a href="#trabajar" class="btn btn-ghost">Cómo es trabajar aquí</a>
@@ -247,7 +278,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
   </div>
 </section>
 
-<!-- ============ VACANTES (protagonista) ============ -->
+<!-- ============ VACANTES ============ -->
 <section class="section jobs" id="vacantes">
   <div class="wrap">
     <div class="section-head">
@@ -295,13 +326,13 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
   </div>
 </section>
 
-<!-- ============ PROYECTOS / DÓNDE ============ -->
+<!-- ============ PROYECTOS ============ -->
 <section class="section units" id="proyectos">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Dónde</span>
       <h2 class="title-soft"><b>Elige</b> dónde quieres trabajar</h2>
-      <p class="lead">Cuatro proyectos, dos países. Cada comunidad y cada campo tiene su equipo, su ubicación y sus vacantes.</p>
+      <p class="lead">Cuatro proyectos, dos países. Cada comunidad y cada campo tiene su equipo, su liderazgo, su ubicación y sus vacantes.</p>
     </div>
     <div class="units-grid">
 
@@ -318,6 +349,10 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
             <span>Akumal, Municipio de Tulum, Quintana Roo, México · CP 77776</span>
           </div>
           <p>Comunidad residencial en el corazón de la Riviera Maya, sede también de PGA Riviera Maya.</p>
+          <div class="leader">
+            <span class="lphoto">foto<img src="images/lider-tcc.jpg" alt="" onerror="this.remove()"></span>
+            <div><b>Álvaro Moya</b><span class="role">Country Manager</span></div>
+          </div>
           <div class="unit-foot"><a href="#vacantes" class="link-more" data-filter="Tulum Country Club">Ver vacantes en Tulum <span class="arrow">→</span></a></div>
         </div>
       </div>
@@ -335,6 +370,10 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
             <span>Riviera Maya, Quintana Roo, México · integrado en Tulum Country Club</span>
           </div>
           <p>Campo de golf de alto nivel con alianza PGA of America, elemento clave de la urbanización.</p>
+          <div class="leader">
+            <span class="lphoto">foto<img src="images/lider-pga-rm.jpg" alt="" onerror="this.remove()"></span>
+            <div><b>Andrés Brictson</b><span class="role">Director de Golf</span></div>
+          </div>
           <div class="unit-foot"><a href="#vacantes" class="link-more" data-filter="PGA Riviera Maya">Ver vacantes en PGA Riviera Maya <span class="arrow">→</span></a></div>
         </div>
       </div>
@@ -352,6 +391,10 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
             <span>Carretera San Pedro – La Romana, República Dominicana · Tel. (001) 809 623 0869</span>
           </div>
           <p>Comunidad residencial en la costa dominicana entre Santo Domingo y La Romana, sede de PGA Ocean's 4.</p>
+          <div class="leader">
+            <span class="lphoto">foto<img src="images/lider-pnr.jpg" alt="" onerror="this.remove()"></span>
+            <div><b>Jesús Durán</b><span class="role">Country Manager</span></div>
+          </div>
           <div class="unit-foot"><a href="#vacantes" class="link-more" data-filter="Playa Nueva Romana">Ver vacantes en Playa Nueva Romana <span class="arrow">→</span></a></div>
         </div>
       </div>
@@ -369,6 +412,10 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
             <span>Playa Nueva Romana, La Romana, República Dominicana · integrado en la comunidad PNR</span>
           </div>
           <p>Campo de golf con alianza PGA of America, integrado en la comunidad de Playa Nueva Romana.</p>
+          <div class="leader">
+            <span class="lphoto">foto<img src="images/lider-oceans4.jpg" alt="" onerror="this.remove()"></span>
+            <div><b>Carlos Linares</b><span class="role">Director de Golf</span></div>
+          </div>
           <div class="unit-foot"><a href="#vacantes" class="link-more" data-filter="PGA Ocean's 4">Ver vacantes en PGA Ocean's 4 <span class="arrow">→</span></a></div>
         </div>
       </div>
@@ -380,32 +427,64 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
 <!-- ============ CÓMO ES TRABAJAR AQUÍ ============ -->
 <section class="section working" id="trabajar">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Cómo es trabajar aquí</span>
-      <h2 class="title-soft"><b>Un lugar</b> para quedarse y crecer</h2>
-      <p class="lead">Un entorno único, rodeado de naturaleza y activo todo el año, donde quienes llegan con ganas de aprender encuentran razones para quedarse.</p>
+    <div class="editorial">
+      <span class="eyebrow">Una comunidad diferente</span>
+      <h2 style="font-size:clamp(27px,3.6vw,40px);margin-bottom:16px">No es un hotel. Es un lugar donde tu trabajo tiene nombre propio.</h2>
+      <p class="lead" style="color:var(--muted)">En TCC y PGA Riviera Maya trabajas en un lugar único, rodeado de naturaleza, en una comunidad residencial de clase mundial activa todo el año, donde quienes llegan con ganas de aprender encuentran razones para quedarse y crecer.</p>
     </div>
-    <div class="promo">
-      <div class="promo-media">
-        <div class="ph-mini">images/trabajar-1.jpg</div>
-        <img src="images/trabajar-1.jpg" alt="" onerror="this.remove()">
-      </div>
-      <div class="promo-text">
-        <h3>Un entorno que se comparte con quien vive ahí</h3>
-        <p>El día a día transcurre dentro de comunidades que integran naturaleza, comunidad y bienestar, con el golf de alto nivel como elemento clave de cada urbanización.</p>
-        <p>Es un entorno compartido con quienes viven ahí, lo que da un sentido de pertenencia distinto al de trabajar en un lugar de paso.</p>
-      </div>
+
+    <div class="big-media">
+      <div class="ph-mini">Imagen o vídeo — vida en la comunidad (images/trabajar.jpg / .mp4)</div>
+      <img src="images/trabajar.jpg" alt="" onerror="this.remove()">
+      <div class="play" id="play-slot"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#b8964e"><path d="M8 5v14l11-7z"/></svg></span></div>
     </div>
-    <div class="promo rev">
-      <div class="promo-media">
-        <div class="ph-mini">images/trabajar-2.jpg</div>
-        <img src="images/trabajar-2.jpg" alt="" onerror="this.remove()">
+
+    <div class="editorial">
+      <p style="font-size:clamp(17px,2vw,20px);color:var(--ink);font-family:'Arsenal',serif;line-height:1.5">Somos una comunidad residencial exclusiva en el corazón de la Riviera Maya. Más de 4.800 residentes nos conocen por nuestro nombre, y nosotros los conocemos a ellos. Eso cambia la forma en que se trabaja: hay estabilidad, hay continuidad y hay un entorno natural único que forma parte de tu día a día.</p>
+    </div>
+
+    <div class="quotes">
+      <figure class="quote">
+        <div class="m">“</div>
+        <p>La razón por la que sigo aquí es porque residencial me abrió las puertas. Fue una escuela. Aquí aprendes; si eres inteligente vas a aprender de todo.</p>
+        <figcaption class="who">Colaborador · Mantenimiento</figcaption>
+      </figure>
+      <figure class="quote">
+        <div class="m">“</div>
+        <p>Aquí de menos no me van a dar de baja una semana y me va a llegar mi quincena corta.</p>
+        <figcaption class="who">Colaborador · Administrativos</figcaption>
+      </figure>
+      <figure class="quote">
+        <div class="m">“</div>
+        <p>Ver el verde y no estar encerrado en una oficina ayuda a que el día no sea pesado.</p>
+        <figcaption class="who">Colaborador · Operaciones</figcaption>
+      </figure>
+    </div>
+
+    <div class="editorial growth">
+      <span class="eyebrow">Aprendizaje y desarrollo</span>
+      <h3>Llegar aquí es solo el principio.</h3>
+      <p>La escala del proyecto, la diversidad de áreas y el apoyo entre compañeros crean condiciones reales para aprender y crecer. Desde operaciones hasta proyectos de arquitectura, desde seguridad hasta administración, en TCC y PGA Riviera Maya quienes llegan con disposición encuentran un terreno real para desarrollarse. No hay un solo puesto ni una sola trayectoria: hay un ecosistema vivo donde cada quien puede encontrar su lugar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIDERAZGO / EVP ============ -->
+<section class="section evp" id="liderazgo">
+  <div class="wrap evp-grid">
+    <div class="evp-photo">
+      <div class="ph-mini">Foto — Jaime Sitjar<br>(images/lider-ceo.jpg)</div>
+      <img src="images/lider-ceo.jpg" alt="" onerror="this.remove()">
+    </div>
+    <div class="evp-text">
+      <span class="eyebrow">Nuestro liderazgo</span>
+      <div class="mark">“</div>
+      <blockquote>Cuidar de las personas que hacen posible cada comunidad es lo primero. Cuando cuidamos a quienes trabajan con nosotros, ellos cuidan de nuestros residentes, y así construimos algo que permanece. Formar parte de esta división es formar parte de un legado en construcción.</blockquote>
+      <div class="sig">
+        <span class="bar"></span>
+        <div><b>Jaime Sitjar</b><span>CEO · División Real Estate &amp; Golf</span></div>
       </div>
-      <div class="promo-text">
-        <h3>Muchas puertas, un mismo propósito</h3>
-        <p>Puede ser el campo al amanecer, la cancha donde la Fundación Real Madrid forma a los más jóvenes, uno de los Centros de Consumo antes de los primeros comensales, el mostrador de The Club recibiendo a un socio o el área de Seguridad manteniendo la operación las 24 horas.</p>
-        <p>Son puertas de entrada distintas a un mismo propósito. Formar parte de esta división es formar parte de un legado en construcción: nos importa, nos involucramos y permanecemos.</p>
-      </div>
+      <p class="draft">Texto de muestra — pendiente de la cita definitiva de Jaime Sitjar.</p>
     </div>
   </div>
 </section>
@@ -433,7 +512,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
   </div>
 </section>
 
-<!-- ============ VALORES EN ACCIÓN ============ -->
+<!-- ============ VALORES ============ -->
 <section class="section values" id="valores">
   <div class="wrap">
     <div class="section-head">
@@ -449,11 +528,11 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
   </div>
 </section>
 
-<!-- ============ QUIÉNES SOMOS (sobrio, al final) ============ -->
+<!-- ============ QUIÉNES SOMOS ============ -->
 <section class="section about" id="quienes">
   <div class="wrap about-grid">
     <div>
-      <span class="eyebrow" style="color:var(--gold)">Quiénes somos</span>
+      <span class="eyebrow">Quiénes somos</span>
       <h2 style="font-size:clamp(26px,3.4vw,38px);margin:12px 0 16px">La división de Real Estate &amp; Golf</h2>
       <p>Desarrollamos y gestionamos comunidades residenciales de alto nivel que integran naturaleza, comunidad y bienestar, con proyectos como Playa Nueva Romana y Tulum Country Club, y dos campos de golf propios —PGA Riviera Maya y PGA Ocean's 4— que suman 54 hoyos.</p>
       <p>Somos el único operador en Latinoamérica con dos campos acreditados por la PGA of America, una alianza que desde 2020 refuerza nuestro compromiso con los más altos estándares internacionales.</p>
@@ -465,6 +544,15 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
       <div><div class="n">54</div><div class="l">hoyos en 2 campos propios</div></div>
       <div><div class="n">2</div><div class="l">campos acreditados PGA of America</div></div>
     </div>
+  </div>
+</section>
+
+<!-- ============ CTA CIERRE ============ -->
+<section class="section cta">
+  <div class="wrap">
+    <span class="eyebrow">Únete al equipo</span>
+    <h2>Tu carrera en la comunidad más completa de la Riviera Maya.</h2>
+    <a href="#vacantes" class="btn btn-gold">Ver vacantes disponibles <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -481,8 +569,8 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
       <a href="#vacantes">Vacantes</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#trabajar">Cómo es trabajar aquí</a>
+      <a href="#liderazgo">Liderazgo</a>
       <a href="#itinerarios">Itinerarios</a>
-      <a href="#valores">Valores</a>
     </div>
     <div class="foot-col">
       <h4>Proyectos</h4>
@@ -509,6 +597,12 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
 const burger=document.getElementById('burger'),nav=document.getElementById('navlinks');
 burger.addEventListener('click',()=>nav.classList.toggle('open'));
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+/* Oculta el botón de play si no hay media cargada */
+window.addEventListener('load',()=>{
+  const media=document.querySelector('.big-media img'),play=document.getElementById('play-slot');
+  if(play && (!media || !media.complete || media.naturalWidth===0)) play.style.display='none';
+});
 
 /* =====================================================================
    VACANTES — datos de ejemplo (placeholder).
