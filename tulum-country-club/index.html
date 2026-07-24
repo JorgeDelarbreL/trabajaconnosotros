@@ -29,7 +29,8 @@
       --brown-dk:   #4b3f33;   /* pie / acentos oscuros */
       --gold:       #bfa15c;   /* botón / sol / acentos */
       --gold-dk:    #a4863f;
-      --gold-text:  #a8946a;   /* textos secundarios en tono marca */
+      --gold-text:  #6f665e;   /* textos secundarios (gris cálido, no dorado) */
+      --title-soft: #8b837b;   /* segundo tono de los titulares */
       --ink:        #4a4340;   /* texto principal */
       --heading:    #3c3a37;   /* titulares oscuros */
       --cream:      #f2f0ec;   /* fondo secciones */
@@ -85,11 +86,11 @@
     /* ---------------- SECCIONES ---------------- */
     section { padding: 88px 0; }
     .display-title { font-family: var(--f-display); font-weight: 400; font-size: clamp(28px, 3.6vw, 40px);
-      line-height: 1.15; color: var(--heading); }
-    .display-title b { font-weight: 700; color: var(--gold-text); }
-    .block-title { font-family: var(--f-body); font-weight: 700; font-size: clamp(24px, 3vw, 32px);
-      color: var(--heading); text-align: center; }
-    .block-title b { color: var(--gold-text); font-weight: 700; }
+      line-height: 1.15; color: var(--title-soft); }
+    .display-title b { font-weight: 700; color: var(--heading); }
+    .block-title { font-family: var(--f-body); font-weight: 400; font-size: clamp(24px, 3vw, 32px);
+      color: var(--title-soft); text-align: center; }
+    .block-title b { color: var(--heading); font-weight: 700; }
 
     /* TRABAJA CON NOSOTROS */
     .work { display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px; align-items: center; }
@@ -114,17 +115,19 @@
     .team .ph { aspect-ratio: 21/8; }
 
     /* ENVÍE SU CV */
-    .cv { background: var(--cream); }
-    .cv .head { text-align: center; margin-bottom: 44px; }
-    .cv .head p { color: var(--gold-text); font-size: 15.5px; max-width: 60ch; margin: 16px auto 0; }
-    .cv-form { max-width: 760px; margin-inline: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 26px; }
+    .cv { background: #efedea; }
+    .cv .wrap { background: #fff; max-width: 880px; padding: 56px clamp(24px,5vw,64px); border-radius: 4px; }
+    .cv .head { text-align: center; margin-bottom: 40px; }
+    .cv .head p { color: var(--gold-text); font-size: 15.5px; max-width: 52ch; margin: 16px auto 0; }
+    .cv-form { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 30px; }
     .cv-form .full { grid-column: 1 / -1; }
-    .field label { display: block; font-size: 12.5px; font-weight: 600; color: var(--heading); margin-bottom: 8px; }
+    .field label { display: block; font-size: 12.5px; font-weight: 600; color: var(--heading); margin-bottom: 6px; }
     .field input[type=text], .field input[type=email], .field textarea {
-      width: 100%; padding: 13px 15px; border: 1px solid var(--line); border-radius: 2px; background: #fff;
-      font-family: var(--f-body); font-size: 15px; color: var(--ink); transition: border-color .2s ease, box-shadow .2s ease; }
-    .field input:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(191,161,92,.15); }
-    .field textarea { min-height: 120px; resize: vertical; }
+      width: 100%; padding: 10px 2px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent;
+      font-family: var(--f-body); font-size: 15px; color: var(--ink); transition: border-color .2s ease; }
+    .field input::placeholder, .field textarea::placeholder { color: #b9b1a6; }
+    .field input:focus, .field textarea:focus { outline: none; border-bottom-color: var(--gold); }
+    .field textarea { min-height: 90px; resize: vertical; }
     .pref-title { font-size: 12.5px; font-weight: 600; color: var(--heading); margin-bottom: 12px; }
     .country-pref { display: flex; gap: 28px; flex-wrap: wrap; }
     .check { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--ink); cursor: pointer; }
@@ -199,7 +202,7 @@
     <div class="wrap header-inner">
       <!-- LOGO oficial "tcc hor neg.svg": caja marrón + sol dorado + texto blanco (para fondo oscuro). -->
       <a class="brand" href="/es/" aria-label="Tulum Country Club — Inicio">
-        <img src="../assets/logos/tcc hor neg.svg" alt="Tulum Country Club"
+        <img src="../assets/logos/tcc-hor-neg-nobox.svg" alt="Tulum Country Club"
              onerror="this.onerror=null;this.src='../assets/logos/tulum-country-club.png';">
       </a>
       <nav>
@@ -235,7 +238,7 @@
   <!-- ===================== NUESTROS VALORES ===================== -->
   <section class="values">
     <div class="wrap">
-      <h2 class="block-title">Nuestros <b>valores</b></h2>
+      <h2 class="block-title"><b>Nuestros</b> valores</h2>
       <p class="lead">Lo que más nos importa es que la vida en nuestros resorts sea extraordinaria y que cada persona pueda desarrollar un estilo de vida único y relevante del que disfrutar, algo que hacemos real gracias a nuestro servicio de calidad.</p>
       <div class="values-grid">
         <div class="value">
@@ -265,7 +268,7 @@
   <!-- ===================== NUESTRO EQUIPO ===================== -->
   <section class="team">
     <div class="wrap">
-      <h2 class="block-title">Nuestro <b>equipo</b></h2>
+      <h2 class="block-title"><b>Nuestro</b> equipo</h2>
       <p class="lead">Conozca a parte de nuestro equipo de profesionales de México y República Dominicana.</p>
       <!-- Coloca la foto en: tulum-country-club/images/work-with-us-our-team.jpeg -->
       <div class="ph" data-ph="work-with-us-our-team.jpeg">
@@ -278,7 +281,7 @@
   <section class="cv" id="sendCVForm">
     <div class="wrap">
       <div class="head">
-        <h2 class="block-title">Envíe <b>su CV</b></h2>
+        <h2 class="block-title"><b>Envíe</b> su CV</h2>
         <p>Si cree que su perfil encaja con nuestra filosofía de vida y de trabajo, estaremos encantados de conocerle. Complete el formulario y adjunte su currículum.</p>
       </div>
       <form class="cv-form" action="" method="post" enctype="multipart/form-data" novalidate>
