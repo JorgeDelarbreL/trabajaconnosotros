@@ -11,14 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#ffffff; --sand:#f8f6f1; --sand2:#f0ece4;
-  --ink:#37342e; --muted:#8b8275; --soft:#a79e90;
-  --gold:#ab9058; --gold-dk:#8c7236;
-  --line:#ece6db; --line2:#e3dccf;
-  --charcoal:#2b2925;
+  /* Colores de marca del logo: dorado + café, sobre crema y blanco (paleta limpia) */
+  --paper:#ffffff; --sand:#f7f4ee; --sand2:#efe9dd;
+  --ink:#39342c; --muted:#897f72; --soft:#a9a093;
+  --gold:#b0955a; --gold-dk:#8f7538;
+  --line:#ebe5da; --line2:#e2dccf;
+  --charcoal:#3a2f24;
   --r:16px; --rlg:24px;
-  --shadow:0 20px 50px rgba(60,52,38,.09);
-  --shadow-sm:0 8px 22px rgba(60,52,38,.07);
+  --shadow:0 20px 50px rgba(58,47,36,.10);
+  --shadow-sm:0 8px 22px rgba(58,47,36,.07);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:74px}
@@ -41,7 +42,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);line-he
 .btn-gold{background:var(--gold);color:#fff}
 .btn-gold:hover{background:var(--gold-dk)}
 .btn-ink{background:var(--charcoal);color:#fff}
-.btn-ink:hover{background:#43403a}
+.btn-ink:hover{background:#52422f}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold-dk)}
 .btn-light{background:#fff;color:var(--charcoal)}
@@ -52,9 +53,11 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);line-he
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:24px;height:64px}
-.brand{display:flex;flex-direction:column;line-height:1.05;margin-right:auto}
-.brand b{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--ink);letter-spacing:.01em}
-.brand span{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);font-weight:600}
+.brand{display:flex;align-items:center;gap:14px;margin-right:auto}
+.brand-mark{color:var(--charcoal);display:flex}
+.pinero-logo{height:21px;width:auto;display:block}
+.pinero-logo path{fill:currentColor}
+.brand-div{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink);padding-left:14px;border-left:1px solid var(--line2);line-height:1.1}
 .nav-links{display:flex;gap:20px}
 .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink);padding:6px 0;position:relative}
 .nav-links a:hover{color:var(--gold-dk)}
@@ -103,7 +106,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .job h3{font-size:18px;margin-bottom:9px;font-family:'Montserrat';font-weight:700;color:var(--ink)}
 .job .meta{display:flex;flex-wrap:wrap;gap:7px}
 .chip{font-size:12px;font-weight:600;color:var(--muted);background:var(--sand2);border-radius:999px;padding:4px 12px}
-.chip.brand{background:#f2ead8;color:var(--gold-dk)}
+.chip.brand{background:#efe7d6;color:var(--gold-dk)}
 .job-empty{text-align:center;color:var(--muted);padding:38px;background:var(--sand);border:1px dashed var(--line2);border-radius:var(--r)}
 .jobs-foot{margin-top:22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 
@@ -193,8 +196,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 
 /* CTA cierre */
 .cta{background:var(--charcoal);color:#fff;text-align:center}
-.cta h2{color:#fff;font-size:clamp(27px,4vw,42px);max-width:20ch;margin:12px auto 0}
-.cta .eyebrow{color:var(--gold)}
+.cta h2{color:#fff;font-size:clamp(30px,4.2vw,46px);max-width:20ch;margin:12px auto 0}
+.cta .eyebrow{color:#d8ccb6}
 .cta .btn{margin-top:28px}
 
 /* Footer */
@@ -206,6 +209,10 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
 .foot-col h4{font-family:'Montserrat';font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#82786a;margin-bottom:13px;font-weight:700}
 .foot-col a,.foot-col p{display:block;color:#b7ad9e;margin-bottom:8px;font-size:13px}
 .foot-col a:hover{color:var(--gold)}
+.foot-social{display:flex;gap:16px;margin-top:16px}
+.foot-social a{font-size:12.5px;color:#b7ad9e;font-weight:600} .foot-social a:hover{color:var(--gold)}
+.foot-logo{display:flex;justify-content:center;padding:8px 0 34px}
+.foot-logo .pinero-logo{height:26px;color:#8a7f6d}
 .foot-bottom{border-top:1px solid #35322c;padding:18px 0;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:#82786a;font-size:12.5px}
 .foot-bottom a{color:#82786a} .foot-bottom a:hover{color:var(--gold)}
 
@@ -235,9 +242,9 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
 <!-- ============ HEADER ============ -->
 <header>
   <div class="wrap nav">
-    <a href="#top" class="brand">
-      <b>Real Estate &amp; Golf</b>
-      <span>Grupo Piñero</span>
+    <a href="#top" class="brand" aria-label="Piñero · Real Estate & Golf">
+      <span class="brand-mark"><svg class="pinero-logo" viewBox="0 0 1200 343" role="img" aria-label="Piñero"><path d="M47.83,336.96H0v-4.33l1.92-167.52L0,4.81V.48h118.01c25.15,0,46.78,3.85,64.89,11.54,18.1,7.69,32.04,19.19,41.82,34.49,9.77,15.3,14.66,34.33,14.66,57.08s-4.97,42.98-14.9,58.76c-9.94,15.78-23.96,27.64-42.06,35.57-18.11,7.93-39.42,11.9-63.93,11.9H50.71l1.44,122.81v4.33h-4.33ZM50.47,172.32h71.14c20.19,0,36.65-5.17,49.39-15.5,12.74-10.33,19.11-27.76,19.11-52.27,0-15.06-2.76-27.52-8.29-37.37-5.53-9.85-13.54-17.18-24.03-21.99-10.5-4.81-23.19-7.21-38.09-7.21H51.67l-1.2,134.35Z"/><path d="M304.75,336.96h-46.87v-4.33l1.44-122.57-1.44-116.32v-4.33h50.95v4.33l-1.2,116.32,1.2,122.57v4.33h-4.09Z"/><path d="M505.67,336.96h-4.16l.08-4.33,1.2-101.42v-48.07c0-14.1-2.08-25.75-6.25-34.97-4.17-9.21-10.02-16.06-17.54-20.55-7.53-4.48-16.1-6.73-25.72-6.73-7.69,0-15.06,1.6-22.11,4.81-7.05,3.21-13.46,7.97-19.23,14.3-5.77,6.33-10.74,14.14-14.9,23.43-4.17,9.29-7.13,20.11-8.89,32.45v35.33l.72,101.42v4.33h-50.95v-4.33l1.44-109.35-.96-129.54v-4.33h48.45l-.14,4.33-1.2,36.29c5.13-8.17,11.66-15.78,19.59-22.83,7.93-7.05,17.1-12.74,27.52-17.06,10.41-4.33,22.03-6.49,34.85-6.49,16.98,0,31.76,3.73,44.34,11.18,12.58,7.45,22.27,18.43,29.08,32.93,6.81,14.5,10.21,32.49,10.21,53.96v49.51l.96,101.42v4.33h-46.39"/><path d="M509.99,1.68h-22.83v4.33c-.32,7.37-1.72,13.34-4.21,17.91-2.49,4.57-6.69,6.85-12.62,6.85-3.69,0-7.21-1.56-10.57-4.69-3.36-3.12-6.89-6.69-10.58-10.69-3.69-4-8.01-7.57-12.98-10.7-4.97-3.12-11.06-4.69-18.27-4.69-13.78,0-24.12,5.13-31,15.38-6.89,10.25-10.58,23.15-11.06,38.69v4.33h26.92v-4.33c.32-7.37,1.68-13.3,4.09-17.78,2.4-4.48,6.33-6.73,11.78-6.73,4.17,0,7.97,1.53,11.42,4.57,3.44,3.05,7.05,6.61,10.82,10.69,3.76,4.09,8.13,7.69,13.1,10.82,4.96,3.12,11.13,4.69,18.51,4.69,13.46,0,23.63-4.89,30.52-14.66,6.89-9.77,10.65-22.67,11.3-38.69V1.68h-4.33Z"/><path d="M970.72,88.68c-2.4-.48-4.81-.88-7.21-1.2-2.4-.32-4.81-.48-7.21-.48-11.54,0-22.67,1.84-33.41,5.53-10.74,3.69-20.51,9.05-29.32,16.1-8.81,7.05-16.19,15.86-22.11,26.44l1.44-41.34.13-4.33h-49.89v4.33l1.68,117.29-1.68,121.61v4.33h50.24v-4.33s-.73-126.66-.73-126.66c1.28-18.27,5.85-33.32,13.7-45.18,7.85-11.86,17.98-20.75,30.4-26.68,12.42-5.93,25.84-8.89,40.26-8.89,2.24,0,4.48.12,6.73.36,2.24.24,4.16.52,5.77.84l4.81,1.01v-37.91l-3.61-.84Z"/><path d="M1081.03,342.72c-19.07,0-36.01-3.05-50.83-9.13-14.82-6.09-27.36-14.82-37.61-26.2-10.26-11.37-18.03-24.95-23.31-40.74-5.29-15.78-7.93-33.44-7.93-52.99s2.64-37.25,7.93-53.12c5.29-15.86,13.06-29.56,23.31-41.1,10.25-11.54,22.79-20.39,37.61-26.56,14.82-6.17,31.76-9.25,50.83-9.25s36.01,3.05,50.83,9.13c14.82,6.09,27.28,14.82,37.37,26.2,10.09,11.38,17.74,25,22.95,40.86,5.2,15.86,7.81,33.57,7.81,53.12s-2.61,37.05-7.81,52.99c-5.21,15.94-12.86,29.64-22.95,41.1-10.09,11.46-22.55,20.27-37.37,26.44-14.82,6.17-31.77,9.25-50.83,9.25ZM1081.03,308.6c11.54,0,21.51-2.04,29.92-6.13,8.41-4.09,15.42-10.17,21.03-18.27,5.61-8.09,9.85-18.03,12.74-29.8,2.88-11.78,4.33-25.36,4.33-40.74s-1.44-28.76-4.33-40.62c-2.88-11.86-7.17-21.91-12.86-30.16-5.69-8.25-12.82-14.5-21.39-18.75-8.57-4.24-18.47-6.37-29.68-6.37-11.7.16-21.83,2.37-30.4,6.61-8.57,4.25-15.66,10.45-21.27,18.63-5.61,8.17-9.85,18.23-12.74,30.16-2.88,11.94-4.33,25.52-4.33,40.74s1.44,28.96,4.33,40.74c2.88,11.78,7.21,21.67,12.98,29.68,5.77,8.01,12.94,14.06,21.51,18.15,8.57,4.09,18.63,6.13,30.16,6.13Z"/><path d="M796.11,160.67c-5.37-16.26-13.1-30.12-23.19-41.58-10.09-11.45-22.35-20.23-36.77-26.32-14.42-6.09-30.85-9.13-49.27-9.13s-34.89,3.12-49.39,9.37c-14.5,6.25-26.88,15.14-37.13,26.68-10.26,11.54-18.07,25.28-23.43,41.22-5.37,15.95-8.05,33.61-8.05,52.99,0,2.19.04,4.35.11,6.49h235.66v-4.33c-.32-20.67-3.17-39.13-8.53-55.4ZM620.79,187.47c1.92-14.74,5.65-27.32,11.18-37.73,5.53-10.41,12.94-18.39,22.23-23.91,9.29-5.53,20.27-8.29,32.93-8.29,13.94,0,25.51,3.21,34.73,9.61,9.21,6.41,16.26,14.9,21.15,25.48,4.89,10.57,7.57,22.19,8.05,34.85h-130.26Z"/><path d="M751.77,259.81c-2.4,10.42-6.33,19.23-11.78,26.44-5.45,7.21-12.34,12.74-20.67,16.58-8.33,3.85-18.19,5.77-29.56,5.77s-20.63-1.72-29.2-5.17c-8.57-3.44-15.86-8.73-21.87-15.86-6.01-7.13-10.62-16.26-13.82-27.4-.39-1.36-.76-2.75-1.11-4.17h-49.91c.85,3.33,1.77,6.62,2.83,9.81,5.21,15.71,12.9,29.28,23.07,40.74,10.17,11.46,22.71,20.35,37.61,26.68,14.9,6.33,32.12,9.49,51.67,9.49,21.79,0,40.5-3.73,56.12-11.18,15.62-7.45,28.04-17.46,37.25-30.04,9.21-12.58,15.1-26.64,17.66-42.18l.5-3.33h-47.91l-.9,3.81Z"/></svg></span>
+      <span class="brand-div">Real Estate &amp; Golf</span>
     </a>
     <nav class="nav-links" id="navlinks">
       <a href="#vacantes">Vacantes</a>
@@ -291,7 +298,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
     </div>
 
     <div class="jobs-note">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#b8964e" stroke-width="2" style="flex:none;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#b0955a" stroke-width="2" style="flex:none;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
       <div><b>Vista previa.</b> Listado de ejemplo. Se conectará automáticamente con <b>Evaluar</b> (realestate-and-golf.evaluar.com): lo que se publique allí aparecerá aquí en tiempo real y, al aplicar, tu CV se enviará a esa plataforma. Sin duplicar procesos.</div>
     </div>
 
@@ -348,7 +355,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
         <div class="unit-body">
           <h3>Tulum Country Club</h3>
           <div class="loc">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8964e" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0955a" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <span>Akumal, Municipio de Tulum, Quintana Roo, México · CP 77776</span>
           </div>
           <p>Comunidad residencial en el corazón de la Riviera Maya, sede también de PGA Riviera Maya.</p>
@@ -370,7 +377,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
         <div class="unit-body">
           <h3>PGA Riviera Maya</h3>
           <div class="loc">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8964e" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0955a" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <span>Riviera Maya, Quintana Roo, México · integrado en Tulum Country Club</span>
           </div>
           <p>Campo de golf de alto nivel con alianza PGA of America, elemento clave de la urbanización.</p>
@@ -392,7 +399,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
         <div class="unit-body">
           <h3>Playa Nueva Romana</h3>
           <div class="loc">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8964e" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0955a" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <span>Carretera San Pedro – La Romana, República Dominicana · Tel. (001) 809 623 0869</span>
           </div>
           <p>Comunidad residencial en la costa dominicana entre Santo Domingo y La Romana, sede de PGA Ocean's 4.</p>
@@ -414,7 +421,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
         <div class="unit-body">
           <h3>PGA Ocean's 4</h3>
           <div class="loc">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8964e" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0955a" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <span>Playa Nueva Romana, La Romana, República Dominicana · integrado en la comunidad PNR</span>
           </div>
           <p>Campo de golf con alianza PGA of America, integrado en la comunidad de Playa Nueva Romana.</p>
@@ -443,7 +450,7 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
     <div class="big-media">
       <div class="ph-mini">Imagen o vídeo — vida en la comunidad (images/trabajar.jpg / .mp4)</div>
       <img src="images/trabajar.jpg" alt="" onerror="this.remove()">
-      <div class="play" id="play-slot"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#b8964e"><path d="M8 5v14l11-7z"/></svg></span></div>
+      <div class="play" id="play-slot"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#b0955a"><path d="M8 5v14l11-7z"/></svg></span></div>
     </div>
 
     <div class="editorial">
@@ -573,8 +580,14 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
   <div class="wrap foot-top">
     <div class="foot-brand">
       <b>Real Estate &amp; Golf</b>
-      <span>Grupo Piñero</span>
+      <span>Piñero</span>
       <p>Comunidades residenciales y campos de golf de alto nivel en México y República Dominicana.</p>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/wearepinero/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/wearepinero" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.facebook.com/wearepinero/" target="_blank" rel="noopener">Facebook</a>
+        <a href="http://www.youtube.com/@wearepinero" target="_blank" rel="noopener">YouTube</a>
+      </div>
     </div>
     <div class="foot-col">
       <h4>Secciones</h4>
@@ -593,13 +606,14 @@ footer{background:#211f1b;color:#b7ad9e;font-size:14px}
     </div>
     <div class="foot-col">
       <h4>Oficinas</h4>
-      <p>Palma de Mallorca<br>Plaza Mediterránea 5</p>
+      <p>Sede · Palma de Mallorca<br>Plaza Mediterráneo, 5 · 07014<br>(+34) 971 787 000</p>
       <p>Tulum, Quintana Roo (México)</p>
       <p>La Romana (Rep. Dominicana)</p>
     </div>
   </div>
+  <div class="wrap foot-logo"><svg class="pinero-logo" viewBox="0 0 1200 343" role="img" aria-label="Piñero"><path d="M47.83,336.96H0v-4.33l1.92-167.52L0,4.81V.48h118.01c25.15,0,46.78,3.85,64.89,11.54,18.1,7.69,32.04,19.19,41.82,34.49,9.77,15.3,14.66,34.33,14.66,57.08s-4.97,42.98-14.9,58.76c-9.94,15.78-23.96,27.64-42.06,35.57-18.11,7.93-39.42,11.9-63.93,11.9H50.71l1.44,122.81v4.33h-4.33ZM50.47,172.32h71.14c20.19,0,36.65-5.17,49.39-15.5,12.74-10.33,19.11-27.76,19.11-52.27,0-15.06-2.76-27.52-8.29-37.37-5.53-9.85-13.54-17.18-24.03-21.99-10.5-4.81-23.19-7.21-38.09-7.21H51.67l-1.2,134.35Z"/><path d="M304.75,336.96h-46.87v-4.33l1.44-122.57-1.44-116.32v-4.33h50.95v4.33l-1.2,116.32,1.2,122.57v4.33h-4.09Z"/><path d="M505.67,336.96h-4.16l.08-4.33,1.2-101.42v-48.07c0-14.1-2.08-25.75-6.25-34.97-4.17-9.21-10.02-16.06-17.54-20.55-7.53-4.48-16.1-6.73-25.72-6.73-7.69,0-15.06,1.6-22.11,4.81-7.05,3.21-13.46,7.97-19.23,14.3-5.77,6.33-10.74,14.14-14.9,23.43-4.17,9.29-7.13,20.11-8.89,32.45v35.33l.72,101.42v4.33h-50.95v-4.33l1.44-109.35-.96-129.54v-4.33h48.45l-.14,4.33-1.2,36.29c5.13-8.17,11.66-15.78,19.59-22.83,7.93-7.05,17.1-12.74,27.52-17.06,10.41-4.33,22.03-6.49,34.85-6.49,16.98,0,31.76,3.73,44.34,11.18,12.58,7.45,22.27,18.43,29.08,32.93,6.81,14.5,10.21,32.49,10.21,53.96v49.51l.96,101.42v4.33h-46.39"/><path d="M509.99,1.68h-22.83v4.33c-.32,7.37-1.72,13.34-4.21,17.91-2.49,4.57-6.69,6.85-12.62,6.85-3.69,0-7.21-1.56-10.57-4.69-3.36-3.12-6.89-6.69-10.58-10.69-3.69-4-8.01-7.57-12.98-10.7-4.97-3.12-11.06-4.69-18.27-4.69-13.78,0-24.12,5.13-31,15.38-6.89,10.25-10.58,23.15-11.06,38.69v4.33h26.92v-4.33c.32-7.37,1.68-13.3,4.09-17.78,2.4-4.48,6.33-6.73,11.78-6.73,4.17,0,7.97,1.53,11.42,4.57,3.44,3.05,7.05,6.61,10.82,10.69,3.76,4.09,8.13,7.69,13.1,10.82,4.96,3.12,11.13,4.69,18.51,4.69,13.46,0,23.63-4.89,30.52-14.66,6.89-9.77,10.65-22.67,11.3-38.69V1.68h-4.33Z"/><path d="M970.72,88.68c-2.4-.48-4.81-.88-7.21-1.2-2.4-.32-4.81-.48-7.21-.48-11.54,0-22.67,1.84-33.41,5.53-10.74,3.69-20.51,9.05-29.32,16.1-8.81,7.05-16.19,15.86-22.11,26.44l1.44-41.34.13-4.33h-49.89v4.33l1.68,117.29-1.68,121.61v4.33h50.24v-4.33s-.73-126.66-.73-126.66c1.28-18.27,5.85-33.32,13.7-45.18,7.85-11.86,17.98-20.75,30.4-26.68,12.42-5.93,25.84-8.89,40.26-8.89,2.24,0,4.48.12,6.73.36,2.24.24,4.16.52,5.77.84l4.81,1.01v-37.91l-3.61-.84Z"/><path d="M1081.03,342.72c-19.07,0-36.01-3.05-50.83-9.13-14.82-6.09-27.36-14.82-37.61-26.2-10.26-11.37-18.03-24.95-23.31-40.74-5.29-15.78-7.93-33.44-7.93-52.99s2.64-37.25,7.93-53.12c5.29-15.86,13.06-29.56,23.31-41.1,10.25-11.54,22.79-20.39,37.61-26.56,14.82-6.17,31.76-9.25,50.83-9.25s36.01,3.05,50.83,9.13c14.82,6.09,27.28,14.82,37.37,26.2,10.09,11.38,17.74,25,22.95,40.86,5.2,15.86,7.81,33.57,7.81,53.12s-2.61,37.05-7.81,52.99c-5.21,15.94-12.86,29.64-22.95,41.1-10.09,11.46-22.55,20.27-37.37,26.44-14.82,6.17-31.77,9.25-50.83,9.25ZM1081.03,308.6c11.54,0,21.51-2.04,29.92-6.13,8.41-4.09,15.42-10.17,21.03-18.27,5.61-8.09,9.85-18.03,12.74-29.8,2.88-11.78,4.33-25.36,4.33-40.74s-1.44-28.76-4.33-40.62c-2.88-11.86-7.17-21.91-12.86-30.16-5.69-8.25-12.82-14.5-21.39-18.75-8.57-4.24-18.47-6.37-29.68-6.37-11.7.16-21.83,2.37-30.4,6.61-8.57,4.25-15.66,10.45-21.27,18.63-5.61,8.17-9.85,18.23-12.74,30.16-2.88,11.94-4.33,25.52-4.33,40.74s1.44,28.96,4.33,40.74c2.88,11.78,7.21,21.67,12.98,29.68,5.77,8.01,12.94,14.06,21.51,18.15,8.57,4.09,18.63,6.13,30.16,6.13Z"/><path d="M796.11,160.67c-5.37-16.26-13.1-30.12-23.19-41.58-10.09-11.45-22.35-20.23-36.77-26.32-14.42-6.09-30.85-9.13-49.27-9.13s-34.89,3.12-49.39,9.37c-14.5,6.25-26.88,15.14-37.13,26.68-10.26,11.54-18.07,25.28-23.43,41.22-5.37,15.95-8.05,33.61-8.05,52.99,0,2.19.04,4.35.11,6.49h235.66v-4.33c-.32-20.67-3.17-39.13-8.53-55.4ZM620.79,187.47c1.92-14.74,5.65-27.32,11.18-37.73,5.53-10.41,12.94-18.39,22.23-23.91,9.29-5.53,20.27-8.29,32.93-8.29,13.94,0,25.51,3.21,34.73,9.61,9.21,6.41,16.26,14.9,21.15,25.48,4.89,10.57,7.57,22.19,8.05,34.85h-130.26Z"/><path d="M751.77,259.81c-2.4,10.42-6.33,19.23-11.78,26.44-5.45,7.21-12.34,12.74-20.67,16.58-8.33,3.85-18.19,5.77-29.56,5.77s-20.63-1.72-29.2-5.17c-8.57-3.44-15.86-8.73-21.87-15.86-6.01-7.13-10.62-16.26-13.82-27.4-.39-1.36-.76-2.75-1.11-4.17h-49.91c.85,3.33,1.77,6.62,2.83,9.81,5.21,15.71,12.9,29.28,23.07,40.74,10.17,11.46,22.71,20.35,37.61,26.68,14.9,6.33,32.12,9.49,51.67,9.49,21.79,0,40.5-3.73,56.12-11.18,15.62-7.45,28.04-17.46,37.25-30.04,9.21-12.58,15.1-26.64,17.66-42.18l.5-3.33h-47.91l-.9,3.81Z"/></svg></div>
   <div class="wrap foot-bottom">
-    <span>© 2026 Grupo Piñero · División Real Estate &amp; Golf</span>
+    <span>© 2026 Piñero · División Real Estate &amp; Golf</span>
     <span><a href="https://www.pinero.com/en/residencial-golf" target="_blank" rel="noopener">piñero.com</a> · Aviso legal · Privacidad</span>
   </div>
 </footer>
