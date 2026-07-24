@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  MOCK-UP · "Trabaja con Nosotros" · Bahía Príncipe
+  Página independiente y autónoma (un solo archivo).
+  ------------------------------------------------------------
+  PARA ADAPTAR / INTEGRAR:
+    1. IMAGEN DEL HERO  -> busca "IMAGEN HERO" en el CSS y
+       sustituye la URL por la imagen definitiva. Debajo hay un
+       degradado de reserva para que se vea aunque no cargue.
+    2. ENVÍO DEL FORM   -> busca action="#" en el <form> y
+       apunta al endpoint / servicio que reciba las candidaturas.
+    3. COLORES / MARCA  -> edita las variables :root (--bp-*).
+    4. TEXTOS           -> están en el HTML, listos para editar.
+  No hay dependencias externas: copiar y pegar funciona tal cual.
+  ============================================================
+-->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -39,9 +55,16 @@
     display: flex;
     align-items: center;
     color: var(--bp-white);
+    /* IMAGEN HERO -----------------------------------------------------------
+       Capas (de arriba a abajo):
+         1) overlay azul para dar contraste al texto
+         2) url(...)  -> imagen definitiva del complejo (sustituir)
+         3) degradado de reserva: se ve si la imagen no carga (mock-up)
+       ---------------------------------------------------------------------- */
     background:
-      linear-gradient(120deg, rgba(13,43,78,0.88) 0%, rgba(26,107,181,0.62) 100%),
-      url("/.resources/lm-residences/webresources/RES_TextButtonImage_DA/assets/images/work-with-us.jpeg") center/cover no-repeat;
+      linear-gradient(120deg, rgba(13,43,78,0.85) 0%, rgba(26,107,181,0.55) 100%),
+      url("/.resources/lm-residences/webresources/RES_TextButtonImage_DA/assets/images/work-with-us.jpeg") center/cover no-repeat,
+      linear-gradient(160deg, #0d2b4e 0%, #1a6bb5 55%, #3a9bd4 100%);
   }
 
   .wtu-hero__inner { padding: 90px 0; max-width: 640px; }
